@@ -71,9 +71,6 @@ to look for one of the following files:
 
 - `cypress/support/component.js`
 - `cypress/support/e2e.js`
-- `cypress/support/component.ts`
-- `cypress/support/e2e.ts`
-- `cypress/support/index.coffee`
 
 Just like with your test files, the
 [`supportFile`](/guides/references/configuration#Folders-Files) can use ES2015+,
