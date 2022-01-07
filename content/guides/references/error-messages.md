@@ -69,8 +69,10 @@ To include code before your test files, set the
 default, [`supportFile`](/guides/references/configuration#Folders-Files) is set
 to look for one of the following files:
 
-- `cypress/support/index.js`
-- `cypress/support/index.ts`
+- `cypress/support/component.js`
+- `cypress/support/e2e.js`
+- `cypress/support/component.ts`
+- `cypress/support/e2e.ts`
 - `cypress/support/index.coffee`
 
 Just like with your test files, the
