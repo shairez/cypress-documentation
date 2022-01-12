@@ -531,8 +531,8 @@ cy.wait('@headers')
 #### Add, modify or delete a header to all outgoing requests
 
 You can add, modify or delete a header to all outgoing requests using a
-`beforeEach()` in the `cypress/support/e2e.js` or `cypress/support/component.js`
-file
+`beforeEach()` in the
+[supportFile](/guides/core-concepts/writing-and-organizing-tests#Support-file).
 
 ```js
 beforeEach(() => {
@@ -662,7 +662,7 @@ cy.intercept('/users', (req) => {
 #### Throttle or delay response all incoming responses
 
 You can throttle or delay all incoming responses using a `beforeEach()` in the
-in the `cypress/support/e2e.js` or `cypress/support/component.js` file
+[supportFile](/guides/core-concepts/writing-and-organizing-tests#Support-file).
 
 ```js
 // Throttle API responses to simulate real-world conditions
