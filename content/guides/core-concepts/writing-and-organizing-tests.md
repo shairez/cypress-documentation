@@ -272,12 +272,11 @@ so you don't have to import this file in every single one of your spec files.
 <strong class="alert-header"><Icon name="cogs"></Icon> Support File Per Test
 Type</strong>
 
-Depending on which [test type](/guides/overview/choosing-testing-type) you're
-using, there are two possible supportFiles. Each type has their own
-configuration.
+Depending on which Cypress [test type](/guides/overview/choosing-testing-type)
+you are using, you may configure your supportFile accordingly.
 
-- [e2e.js](/guides/references/configuration#e2e)
-- [component.js](/guides/references/configuration#component)
+- [e2e](/guides/references/configuration#e2e)
+- [component](/guides/references/configuration#component)
 
 </Alert>
 
