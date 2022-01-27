@@ -69,8 +69,19 @@ To include code before your test files, set the
 default, [`supportFile`](/guides/references/configuration#Folders-Files) is set
 to look for one of the following files:
 
+**Component:**
+
 - `cypress/support/component.js`
+- `cypress/support/component.jsx`
+- `cypress/support/component.ts`
+- `cypress/support/component.tsx`
+
+**End-to-End:**
+
 - `cypress/support/e2e.js`
+- `cypress/support/e2e.jsx`
+- `cypress/support/e2e.ts`
+- `cypress/support/e2e.tsx`
 
 Just like with your test files, the
 [`supportFile`](/guides/references/configuration#Folders-Files) can use ES2015+,
