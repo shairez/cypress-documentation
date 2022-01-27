@@ -83,6 +83,13 @@ to look for one of the following files:
 - `cypress/support/e2e.ts`
 - `cypress/support/e2e.tsx`
 
+<Alert type="danger">
+
+For a given testing type, multiple matching `supportFile` files will result in
+an error when Cypress loads.
+
+</Alert>
+
 Just like with your test files, the
 [`supportFile`](/guides/references/configuration#Folders-Files) can use ES2015+,
 [TypeScript](/guides/tooling/typescript-support) or CoffeeScript and modules, so
