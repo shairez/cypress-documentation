@@ -85,8 +85,8 @@ to look for one of the following files:
 
 <Alert type="danger">
 
-For a given testing type, multiple matching `supportFile` files will result in
-an error when Cypress loads.
+⚠️ For a given testing type, multiple matching `supportFile` files will result
+in an error when Cypress loads.
 
 </Alert>
 
