@@ -263,7 +263,7 @@ The initial imported plugins file can be
 
 ### Support file
 
-By default Cypress will automatically include the supportFile. This file runs
+By default Cypress will automatically include the `supportFile`. This file runs
 **before** every single spec file. We do this purely as a convenience mechanism
 so you don't have to import this file in every single one of your spec files.
 
