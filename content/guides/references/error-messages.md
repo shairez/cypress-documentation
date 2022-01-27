@@ -83,6 +83,14 @@ to look for one of the following files:
 - `cypress/support/e2e.ts`
 - `cypress/support/e2e.tsx`
 
+// ========== (duplicate for review purposes) // ==========
+
+**Component:** `cypress/support/component.{js,jsx,ts,tsx}`
+
+**End-to-End:**
+
+- The default value is `cypress/support/e2e.{js,jsx,ts,tsx}`
+
 <Alert type="danger">
 
 ⚠️ For a given testing type, multiple matching `supportFile` files will result
