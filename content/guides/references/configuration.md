@@ -789,17 +789,19 @@ and will not work:
 
 :::
 
-Solution: place the `baseUrl` property at the top level, outside the `env`
-object.
+Solution: place the `baseUrl` property outside the `env` object and inside a
+test type-specific object.
 
 :::cypress-config-example{noJson}
 
 ```js
 {
   // ✅ THE CORRECT WAY
-  baseUrl: 'http://localhost:3030',
   env: {
     FOO: 'bar'
+  },
+  e2e: {
+    baseUrl: 'http://localhost:3030',
   }
 }
 ```
