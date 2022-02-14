@@ -50,7 +50,7 @@ recommend wrapping your config object with `defineConfig()` like this:
 
 ```js
 {
-  baseUrl: 'http://localhost:1234'
+  specExcludePattern: 'utils.js',
 }
 ```
 
