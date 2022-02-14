@@ -245,7 +245,7 @@ Cypress will prefix the URL with the `baseUrl` if it has been set. Configure
 `baseUrl` in the [Cypress configuration](/guides/references/configuration) to
 prevent repeating yourself in every `cy.visit()` command.
 
-:::cypress-config-example
+:::cypress-config-example{isBaseUrl}
 
 ```js
 {
@@ -288,7 +288,7 @@ group of tests, disable the `baseUrl` using
 [per-test configuration](/guides/references/configuration#Test-Configuration).
 Imagine this Cypress configuration:
 
-:::cypress-config-example
+:::cypress-config-example{isBaseUrl}
 
 ```js
 {

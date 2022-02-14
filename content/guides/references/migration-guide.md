@@ -34,7 +34,7 @@ Related notes:
   configuration in `cypress.config.js`, `cypress.config.ts` and `cypress.json`.
   For example:
 
-:::cypress-config-example
+:::cypress-config-example{isBaseUrl}
 
 ```js
 {

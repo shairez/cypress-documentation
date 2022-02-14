@@ -146,7 +146,7 @@ Open up your [configuration file](/guides/references/configuration)
 (`cypress.json` in your project directory, by default) It starts out empty, but
 let's add the `baseUrl` option.
 
-:::cypress-config-example
+:::cypress-config-example{isBaseUrl}
 
 ```js
 {

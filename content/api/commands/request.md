@@ -43,7 +43,7 @@ cy.request('users/1.json') //  URL is  http://localhost:8080/users/1.json
    host is the `baseUrl` property configured inside of of your
    [configuration file](/guides/references/configuration).
 
-:::cypress-config-example
+:::cypress-config-example{isBaseUrl}
 
 ```js
 {
