@@ -267,7 +267,7 @@ By default Cypress will automatically include the `supportFile`. This file runs
 **before** every single spec file. We do this purely as a convenience mechanism
 so you don't have to import this file in every single one of your spec files.
 
-::testing-type-specific-option{file=partials/support-file-test-type.md}
+::testing-type-specific-option{option=supportFile}
 
 The initial imported support file can be configured to another file or turned
 off completely using the

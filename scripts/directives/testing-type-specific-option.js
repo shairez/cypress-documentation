@@ -1,9 +1,5 @@
-const fs = require('fs')
-const path = require('path')
-
 function processNode(node, { error }) {
   const { attributes } = node
-  const { file } = attributes
 
   if (!attributes) {
     return error(
@@ -12,9 +8,14 @@ function processNode(node, { error }) {
   }
 
   try {
-    const absPath = path.join(__dirname, '../../content/', file)
+    const test = `Depending on which Cypress [test type](/guides/overview/choosing-testing-type)
+    you are using, you may configure your OPTION_HERE accordingly.`
 
-    return fs.readFileSync(absPath, { encoding: 'utf8' })
+    if (Object.values(attributes).includes('supportFile')) {
+      const testOption = test.only.replace('OPTION_HERE', 'supportFile')
+
+      return testOption;
+    }
   } catch (err) {
     return error(
       `Failed to read file: ${attributes}. This error is due to a problem with partials. Check your markdown files for the "::testing-type-specific-option{attribute}" directive and make sure that attributes exists. If this issue persists, please open a new issue with steps to reproduce.`,
