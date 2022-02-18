@@ -40,15 +40,13 @@ function processNode(node, { _require, error, warn }) {
   }
 
   const isBaseUrl = 'isBaseUrl' in attributes
-  let testTypeCommentOrProp = isBaseUrl ?
-    endent`
-      {
-        // baseUrl must be defined in the
-        // e2e test type configuration
+  let testTypeCommentOrProp = isBaseUrl
+    ? endent`
+        // setupNodeEvents can be defined in either
+        // the e2e or component configuration
         e2e: ${body}
-      }
-    ` :
-    endent`
+      `
+    : endent`
     ${body}
     `
 
@@ -59,7 +57,9 @@ function processNode(node, { _require, error, warn }) {
       body: endent`
         const { defineConfig } = require('cypress')
         ${header}
-        module.exports = defineConfig(${testTypeCommentOrProp})
+        module.exports = defineConfig({
+          ${testTypeCommentOrProp}
+        })
       `,
     },
     {
