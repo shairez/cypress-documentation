@@ -40,15 +40,31 @@ function processNode(node, { _require, error, warn }) {
   }
 
   const isBaseUrl = 'isBaseUrl' in attributes
-  let testTypeCommentOrProp = isBaseUrl
-    ? endent`
-        // setupNodeEvents can be defined in either
-        // the e2e or component configuration
+
+  const baseUrlComment =
+      endent`
+        // baseUrl must be defined in the
+        // e2e test type configuration
         e2e: ${body}
       `
-    : endent`
-    ${body}
-    `
+
+  const jsBlock = isBaseUrl
+      ? endent`
+      module.exports = defineConfig({
+        ${baseUrlComment}
+      })
+      `
+      :
+      endent`module.exports = defineConfig(${body})`
+
+  const tsBlock = isBaseUrl
+      ? endent`
+      export default defineConfig({
+        ${baseUrlComment}
+      })
+      `
+      :
+      endent`export default defineConfig(${body})`
 
   return helpers.getCodeGroup(
     {
@@ -57,9 +73,7 @@ function processNode(node, { _require, error, warn }) {
       body: endent`
         const { defineConfig } = require('cypress')
         ${header}
-        module.exports = defineConfig({
-          ${testTypeCommentOrProp}
-        })
+        ${jsBlock}
       `,
     },
     {
@@ -68,7 +82,7 @@ function processNode(node, { _require, error, warn }) {
       body: endent`
         import { defineConfig } from 'cypress'
         ${header}
-        export default defineConfig(${testTypeCommentOrProp})
+        ${tsBlock}
       `,
     },
     {
