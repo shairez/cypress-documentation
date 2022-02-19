@@ -40,7 +40,6 @@ function processNode(node, { _require, error, warn }) {
   }
 
   const isBaseUrl = 'isBaseUrl' in attributes
-
   const baseUrlComment =
       endent`
         // baseUrl must be defined in the
@@ -48,23 +47,29 @@ function processNode(node, { _require, error, warn }) {
         e2e: ${body}
       `
 
-  const jsBlock = isBaseUrl
-      ? endent`
+  const genrateJsContent = () => {
+    if (isBaseUrl) {
+      return endent`
       module.exports = defineConfig({
         ${baseUrlComment}
       })
       `
-      :
-      endent`module.exports = defineConfig(${body})`
+    }
 
-  const tsBlock = isBaseUrl
-      ? endent`
+      return endent`module.exports = defineConfig(${body})`
+  }
+
+  const generateTsContent = () => {
+    if (isBaseUrl) {
+      return endent`
       export default defineConfig({
         ${baseUrlComment}
       })
       `
-      :
-      endent`export default defineConfig(${body})`
+    }
+
+    return endent`export default defineConfig(${body})`
+  }
 
   return helpers.getCodeGroup(
     {
@@ -73,7 +78,7 @@ function processNode(node, { _require, error, warn }) {
       body: endent`
         const { defineConfig } = require('cypress')
         ${header}
-        ${jsBlock}
+        ${genrateJsContent()}
       `,
     },
     {
@@ -82,7 +87,7 @@ function processNode(node, { _require, error, warn }) {
       body: endent`
         import { defineConfig } from 'cypress'
         ${header}
-        ${tsBlock}
+        ${generateTsContent()}
       `,
     },
     {
